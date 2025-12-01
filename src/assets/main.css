@@ -1,0 +1,102 @@
+@import './base.css';
+
+/* Awards specific */
+.awards { max-width: 760px; margin: 0 auto; padding: 1rem; text-align: center }
+.awards h2 { color: var(--nv-green-2); margin-top: 0 }
+.awards-list { list-style: none; padding: 0; margin: .6rem 0 0 0 }
+.awards-list li { padding: .4rem 0; border-bottom: 1px solid rgba(255,255,255,0.02) }
+.awards-list li:last-child { border-bottom: none }
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+
+/* NVIDIA-inspired theme */
+:root {
+  --nv-green: #76b900;
+  --nv-green-2: #9be34a;
+  --bg: #0b0d0f;
+  --panel: #0f1416;
+  --muted: #9aa6a0;
+  --card-shadow: 0 8px 30px rgba(118,185,0,0.06);
+}
+
+body {
+  background: linear-gradient(180deg, #070808 0%, var(--bg) 100%);
+  color: #e6f0df;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#portfolio { padding: 2rem 1rem }
+
+a, .green { color: var(--nv-green); }
+a:hover { color: var(--nv-green-2) }
+
+.projects-grid { display: grid; gap: 1rem; grid-template-columns: 1fr }
+
+.muted { color: var(--muted) }
+
+/* utility: card background */
+.nv-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+  border: 1px solid rgba(118,185,0,0.07);
+  box-shadow: var(--card-shadow);
+}
+
+/* Resume embed tweaks */
+.work-experience .button { margin-right: .5rem }
+.work-experience .muted a { color: var(--nv-green) }
+
+/* Section divider between sections */
+.section-divider {
+  width: 100%;
+  max-width: 680px;
+  height: 1px;
+  margin: 1.5rem auto;
+  background: linear-gradient(90deg, transparent, rgba(118,185,0,0.14), transparent);
+  box-shadow: 0 4px 18px rgba(118,185,0,0.04);
+  border-radius: 2px;
+}
+
+.section-divider.small { max-width: 420px; margin: 1rem auto }
+
+/* Force single-column centered layout (override earlier grid rules) */
+@media (min-width: 1024px) {
+  body { display: block; }
+  #app { display: block; grid-template-columns: none; padding: 2rem; }
+}
+
+
+
