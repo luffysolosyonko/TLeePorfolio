@@ -1,7 +1,10 @@
 <script setup>
+import { computed } from 'vue'
 import ProjectCard from './ProjectCard.vue'
 
-const projects = [
+const base = import.meta.env.BASE_URL || '/'
+
+const projects = computed(() => [
   {
     id: 1,
     title: 'Poetry Garden',
@@ -9,7 +12,7 @@ const projects = [
       'React, TypeScript, Firebase — Built a full-stack poetry sharing app with Firebase authentication and a real-time database. Designed an interactive flower-association feature to visually represent each poem and optimized a responsive front-end for cross-device publishing and browsing. (Feb 2024–Jun 2024)',
     link: '#',
     repo: 'https://github.com/CSC-3380-Spring-2025/Team-29',
-    image: '/React-icon.svg.png'
+    image: `${base}React-icon.svg.png`
   },
   {
     id: 2,
@@ -18,7 +21,7 @@ const projects = [
       'Node.js, Firebase, Python — Built a Discord bot that logs structured workouts, tracks progress, and estimates calories burned. Integrated Firebase for persistent data storage and generated progress graphs; deployed to Railway with environment variable handling for reliable uptime.',
     link: '#',
     repo: 'https://github.com/luffysolosyonko/discord-workout-tracker',
-    image: '/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png'
+    image: `${base}png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text-thumbnail.png`
   },
   {
     id: 3,
@@ -27,7 +30,7 @@ const projects = [
       'HTML, CSS, JavaScript — Web-based personality quiz that recommends ideal travel destinations based on user responses. Implemented a recommendation algorithm and improved load performance by 25% through responsive CSS and layout optimizations.',
     link: '#',
     repo: 'https://github.com/luffysolosyonko/Personalitytravelguide',
-    image: '/javascript-logo-javascript-icon-transparent-free-png.webp'
+    image: `${base}javascript-logo-javascript-icon-transparent-free-png.webp`
   }
   ,
   {
@@ -37,9 +40,9 @@ const projects = [
       'GameMaker - A game built in GameMaker for Chillenium 2023 at Texas A&M. A top-down shooter where you play as a half human, half dog mix trying to survive against waves of enemies. Features combat system, with health tracker.',
     video: 'https://youtu.be/kD6jbGcpZWM',
     repo: 'https://github.com/luffysolosyonko/Heartfusion',
-    image: '/gamemaker-os7p0j98mgnwmrd3pzgoof.webp'
+    image: `${base}gamemaker-os7p0j98mgnwmrd3pzgoof.webp`
   }
-]
+])
 </script>
 
 <template>

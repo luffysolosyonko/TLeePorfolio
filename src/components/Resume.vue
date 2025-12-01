@@ -14,7 +14,12 @@
 </template>
 
 <script setup>
-const pdfPath = '/resumenovember2025.pdf'
+import { computed } from 'vue'
+
+const pdfPath = computed(() => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}resumenovember2025.pdf`
+})
 </script>
 
 <style scoped>

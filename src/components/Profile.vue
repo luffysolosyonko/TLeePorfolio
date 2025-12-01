@@ -1,6 +1,6 @@
 <template>
   <section class="profile">
-    <img class="profile-pic" src="/profilepicture.jpg" alt="Profile picture" />
+    <img class="profile-pic" :src="profilePic" alt="Profile picture" />
 
     <div class="profile-content">
       <h1 class="name">Thomas Lee</h1>
@@ -13,6 +13,15 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+
+const profilePic = computed(() => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}profilepicture.jpg`
+})
+</script>
 
 <style scoped>
 .profile {
